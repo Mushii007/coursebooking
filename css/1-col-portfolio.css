@@ -1,0 +1,163 @@
+/*!
+ * Start Bootstrap - 1 Col Portfolio (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+body {
+    padding-top: 150px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+        color: #ffffff;
+    background-color: #000000;
+
+
+}
+
+footer {
+    margin: 50px 0;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+
+	font-weight: 600 !important;
+
+}
+
+.navbar{
+
+min-height: 100px !important;
+
+}
+
+.navbar-nav{
+    margin: 25px 0 0 40px !important;
+
+}
+.navbar-header{
+
+    margin: 18px 0 18px 0 !important;
+
+}
+
+.navbar-inverse{
+
+background-color: #000000 !important;
+    border-color: #000000 !important;
+
+}
+.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus {
+    color: #ffffff;
+    background-color: #ed1e79;
+}
+
+.jumbotron{
+
+	    background-color: #000000;
+}
+
+::selection {
+  background: #ed1e79; /* WebKit/Blink Browsers */
+}
+
+.btn-primary {
+    color: #ffffff;
+    background-color: #ed1e79;
+    border-color: #ed1e79;
+}
+
+.btn-primary:hover {
+    color: #ffffff;
+    background-color: #ed1e79;
+    border-color: #ed1e79;
+}
+h3.course-title {
+    margin: 0 0 35px 0;
+}
+.inside-content{
+
+    margin-top:31px !important;
+
+}
+.booknow-btn{
+
+    margin-top:35px !important;
+
+}
+
+a.course-title-link{
+
+    color: #fff !important;
+}
+
+a.course-title-link:hover{
+
+    color:#fff !important;
+    text-decoration: none !important;
+}
+
+
+.thankyou-message{
+
+    background: rgba(9, 47, 10, 0.68) !important;
+    padding: 12px 12px 12px 22px !important;
+    border: 2px solid rgba(36, 179, 40, 0.68) !important;
+}
+
+legend{
+
+    color: #ffffff !important;
+
+}
+
+.search-filters{
+
+    margin:0 0 55px 0 !important;
+}
+
+.newcheckz input[type=checkbox], .checkbox-inline input[type=checkbox], .radio input[type=radio], .radio-inline input[type=radio]{
+	
+	margin-top:4px !important;
+	
+}
+
+.show_more_main {
+margin: 15px 500px;
+}
+/*
+.show_more {
+background-color: #ed1e79;
+background-image: -webkit-linear-gradient(top,#fcfcfc 0,#ed1e79 100%);
+background-image: linear-gradient(top,#fcfcfc 0,#f8f8f8 100%);
+border: 1px solid;
+border-color: #ed1e79;
+color: #fcf9fa;
+font-size: 15px;
+outline: 0;
+}
+.show_more {
+cursor: pointer;
+display: block;
+padding: 10px 0;
+text-align: center;
+font-weight:bold;
+}*/
+.loding {
+background-color: #e9e9e9;
+border: 1px solid;
+border-color: #c6c6c6;
+color: #333;
+font-size: 12px;
+display: block;
+text-align: center;
+padding: 10px 0;
+outline: 0;
+font-weight:bold;
+}
+.loding_txt {
+background-image: url(loading_16.gif);
+background-position: left;
+background-repeat: no-repeat;
+border: 0;
+display: inline-block;
+height: 16px;
+padding-left: 20px;
+}
