@@ -5,7 +5,7 @@ if (isset($_POST['course_button'])){
 
 	$course_name = $_POST['c_name'];
 
-	$course_descr = $_POST['c_desc'];
+	$course_descr = htmlentities($_POST['c_desc']);
 
 	$location  = $_POST['c_loc'];
 	 
@@ -61,6 +61,11 @@ else{
 
 
 ?>
+<script type="text/javascript">
+            $(document).ready(function() {
+                $("#course_desc").Editor();
+            });
+        </script>
  <div id="page-wrapper">
 
             <div class="container-fluid">
@@ -85,7 +90,7 @@ else{
                     <div class="col-lg-12">
 
 
-                        <form role="form" action="" method="post" id="course_form">
+                        <form role="form" action="" method="post" id="course_form" name="coureform"  onsubmit="document.coureform.c_desc.value = $('#course_desc').html()">
 
 
 <div class="row">
@@ -99,7 +104,8 @@ else{
 		<div class="col-md-6">
                             <div class="form-group">
                                 <label>Course Description</label>
-                                <textarea class="form-control" name="c_desc" id="course_desc" placeholder="Enter text"></textarea>
+                                 <textarea class="form-control" name="c_desc" id="course_desc" placeholder="Enter text"></textarea>
+
      					 </div>
       	</div>
 </div>

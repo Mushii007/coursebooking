@@ -22,6 +22,8 @@ while($row=$stmt->fetch(PDO::FETCH_BOTH))
          
 
     ?>
+
+    
     <div class="container inside-content">
 <div class="row">
              
@@ -162,7 +164,7 @@ window.onload = codeAddress;
 
 
 </script>
-<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe-ARudjWN96j8uftrxmHzUYO_rvP4tBw"></script>-->
+
 
                 </div>
               </div>

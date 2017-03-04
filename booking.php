@@ -110,6 +110,48 @@ return false;
 
 
 ?>
+<script type="text/javascript">
+	$( document ).ready(function(){
+	$('#quantity1').bind('keyup keypress blur', function() 
+	{  
+    	$('#quantity2').val($(this).val()); 
+	});
+
+
+	$('input[name=payment_method]').click(function () {
+    if (this.id == "pay_arrival_btn") {
+        $(".pay_submit").show('slow');
+        $(".paypal_submit").hide('slow');
+    } else {
+        $(".pay_submit").hide('slow');
+        $(".paypal_submit").show('slow');
+
+    }
+	});
+
+	
+
+		$(window).load(function() {
+		      submitForm();
+		});
+
+
+	});
+
+
+function submitForm() {
+   // Get the first form with the name
+   // Hopefully there is only one, but there are more, select the correct index
+   var frm = document.getElementsByName('bookingform')[0];
+  // frm.submit(); // Submit
+   frm.reset();  // Reset
+ //  return false; // Prevent page refresh
+}
+
+
+</script>
+
+
 
             <div class="container">
 					
@@ -128,7 +170,7 @@ return false;
                     <div class="col-md-6">
 
 
-                        <form role="form" action="" method="post" id="course_form">
+                        <form role="form" action="" method="post" id="course_form" name="bookingform">
 
 
 		<div class="row">
@@ -247,7 +289,7 @@ return false;
 			
 			             <div class="form-group">
 			             <label>Quantity</label>	
-			             <input type="number" class="form-control"  name="quantity" ">
+			             <input type="number" class="form-control"  name="quantity" id="quantity1">
              			 </div>
 
 				</div>
@@ -332,25 +374,36 @@ return false;
 				</div>
 				<div class="col-md-6">
 
-						<div class="form-group">	
+							
+                
+						<label>Select payment method? </label>	
+                     <label class="radio-inline">
+                        <input type="radio" id="pay_arrival_btn" value="Yes" checked="checked" name="payment_method">Pay on arrival?
+                       <!--  <label for="inlineCheckbox1"> Pay on Arrival </label> -->
+                    </label> 
+                    <label class="radio-inline">
+                        <input type="radio" id="pay_paypal_btn" value="no"  name="payment_method">Pay with PayPal?
+                        <!-- <label for="inlineCheckbox2">  </label> -->
+                    </label>
+
                        
-             			 </div>
+    			
 
 
 				</div>	
 
 		</div>
 
-
+				
 
 
 				 <input type="hidden" class="" name="price" value="<?php echo $_SESSION['price']; ?>">
 				 <input type="hidden" class="" name="course_location" value="<?php echo $_SESSION['location']; ?>">
 			 	 <input type="hidden" class="" name="status" value="pending">
-
-		           <input type="submit" class="btn btn-primary" name="course_button" value="Submit Button">
+			 	 <div class="pay_submit">
+		           <input type="submit" class="btn btn-primary " name="course_button" value="Place booking" >
                             <button type="reset" class="btn btn-primary">Reset Button</button>
-
+                 </div>          
 
 						</form>
 		
@@ -361,8 +414,42 @@ return false;
 
 						</div>
 
+<?php
 
-			
+$paypalURL = 'https://www.sandbox.paypal.com/cgi-bin/webscr'; //Test PayPal API URL
+$paypalID = 'new_chemist-bussiness@hotmail.com'; //Business Email
+
+?>
+<form action="<?php echo $paypalURL; ?>" method="post">
+        <!-- Identify your business so that you can collect the payments. -->
+        <input type="hidden" name="business" value="<?php echo $paypalID; ?>">
+        
+        <!-- Specify a Buy Now button. -->
+        <input type="hidden" name="cmd" value="_xclick">
+        
+        <!-- Specify details about the item that buyers will purchase. -->
+         <input type="hidden" name="item_name" value="<?php echo $_SESSION['coursename']; ?>">
+             <input type="hidden" name="item_number" value="<?php echo $_SESSION['courseid'];?>">
+        <input type="hidden" name="quantity" id="quantity2" value="">
+        <input type="hidden" name="amount" value="<?php echo $_SESSION['price']; ?>">
+        <input type="hidden" name="currency_code" value="USD">
+        
+        <!-- Specify URLs -->
+        <input type='hidden' name='cancel_return' value='http://localhost/coursebooking/cancel.php'>
+<input type='hidden' name='return' value='http://localhost/coursebooking/succes.php'>
+       
+          <input type='hidden' name='notify_url' value='http://localhost/coursebooking/ipn.php'>
+ 
+
+   <div class="paypal_submit" style="display:none;">
+
+        <!-- Display the payment button. -->
+        <!-- <input type="image" name="submit" border="0"
+        src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" alt="PayPal - The safer, easier way to pay online"> -->
+        <input type="submit" name="paypalsubmit" value="Paypal" class="btn btn-primary">
+        </div>
+        <img alt="" border="0" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+    </form>			
 
 
 

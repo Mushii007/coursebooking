@@ -94,7 +94,7 @@ class CourseClass{
 
 				}
 ?>
-<div class="show_more_main" id="show_more_main<?php echo $tutorial_id; ?>">
+<div class="col-xs-5 col-xs-offset-5 col-md-5 col-md-offset-5 col-lg-5 col-lg-offset-5 show_more_main" id="show_more_main<?php echo $tutorial_id; ?>">
         <span id="<?php echo $tutorial_id; ?>" class="btn btn-primary show_more" title="Load more posts">Show more</span>
         <span class="loding" style="display: none;"><span class="loding_txt">Loading....</span></span>
     </div>
