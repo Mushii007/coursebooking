@@ -1,0 +1,10 @@
+diff a/config/database.php b/config/database.php	(rejected hunks)
+@@ -6,7 +6,7 @@
+ $dbhost='localhost';
+ $dbuser='root';
+ $dbpass='';
+-
++// this is db file
+ try{
+ 
+ $DB_con = new PDO("mysql:host={$dbhost};dbname={$dbname}",$dbuser,$dbpass);

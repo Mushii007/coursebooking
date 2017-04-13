@@ -6,7 +6,6 @@ $dbname='lms_course-booking';
 $dbhost='localhost';
 $dbuser='root';
 $dbpass='';
-// this is db file
 try{
 
 $DB_con = new PDO("mysql:host={$dbhost};dbname={$dbname}",$dbuser,$dbpass);

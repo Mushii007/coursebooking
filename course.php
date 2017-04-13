@@ -206,7 +206,7 @@ window.onload = codeAddress;
  $_SESSION['coursename'] = $row['course_name'];
  $_SESSION['description'] = $row['course_description'];
  $_SESSION['location'] = $row['location'];
- $_SESSION['price'] = $row['price'];
+ $_SESSION['price'] = $row['deposite_price'];
 
     ?>
 </div>

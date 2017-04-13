@@ -127,7 +127,9 @@ if (isset($_POST['filtercourse'])){
 	$city = $_POST['city'];
 	$session = $_POST['Session'];
 	
-	$query = "SELECT * FROM courses WHERE `course_name` ='$coursenam' OR DATE_FORMAT(`course_date` ,'%Y-%m') = DATE_FORMAT(NOW() ,'%Y-$date') OR `city` ='$city' OR `course_session` LIKE '%".$session."%' ORDER BY course_id DESC";
+	/*$query = "SELECT * FROM courses WHERE `course_name` ='$coursenam' OR DATE_FORMAT(`course_date` ,'%Y-%m') = DATE_FORMAT(NOW() ,'%Y-$date') OR `city` ='$city' OR `course_session` LIKE '%".$session."%' ORDER BY course_id DESC";*/
+$query = "SELECT * FROM courses WHERE `course_name` ='$coursenam' OR DATE_FORMAT(`course_date` ,'%Y-%m') = DATE_FORMAT(NOW() ,'%Y-$date') OR `city` ='$city' OR `course_session` LIKE '%".$session."%' ORDER BY course_id DESC";
+
 	 $course->SeachCourses($query);
 	
 }
